@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEA Treinamentos - Portfólio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/heroicons@2.0.18/dist/heroicons.min.js"></script>
+    <link rel="shortcut icon" href="assets/logo sea.png" type="image/x-icon">
+
+</head>
+
+<body class="font-sans bg-gray-50">
+
+    <!-- NAV -->
+    <nav class="fixed inset-x-0 top-0 z-50 bg-white/80 backdrop-blur border-b border-green-500">
+        <div class="mx-auto max-w-6xl px-4">
+            <div class="flex h-16 items-center justify-between">
+                <!-- Logo -->
+                <a href="#" class="flex items-center gap-2">
+                    <img src="assets/logo sea.png" alt="SEA Treinamentos" class="w-10">
+                    <span class="font-bold text-blue-700">SEA Treinamentos</span>
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center gap-6">
+                    <a href="#cursos" class="text-gray-800 hover:text-green-600 font-semibold transition">Cursos</a>
+                    <a href="#sobre" class="text-gray-800 hover:text-green-600 font-semibold transition">Sobre</a>
+                    <a href="#depoimentos"
+                        class="text-gray-800 hover:text-green-600 font-semibold transition">Depoimentos</a>
+                    <a href="#contato" class="text-gray-800 hover:text-green-600 font-semibold transition">Contato</a>
+                    <a target="_blank" href="https://wa.me/5522992178202?text=Olá!"
+                        class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg font-medium transition">
+                        WhatsApp
+                    </a>
+                </div>
+
+                <!-- Mobile Button -->
+                <button id="navToggle" class="md:hidden p-2 rounded-md text-gray-700 hover:bg-gray-100">
+                    <svg id="iconOpen" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                    <svg id="iconClose" class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="md:hidden hidden bg-white shadow-md border-t border-gray-200">
+                <div class="flex flex-col p-4 gap-2">
+                    <a href="#cursos" class="px-3 py-2 rounded hover:bg-gray-100">Cursos</a>
+                    <a href="#sobre" class="px-3 py-2 rounded hover:bg-gray-100">Sobre</a>
+                    <a href="#depoimentos" class="px-3 py-2 rounded hover:bg-gray-100">Depoimentos</a>
+                    <a href="#contato" class="px-3 py-2 rounded hover:bg-gray-100">Contato</a>
+                    <a target="_blank" href="https://wa.me/5522992178202?text=Olá!"
+                        class="mt-2 px-4 py-2 rounded-lg bg-green-600 text-white text-center hover:bg-green-700">WhatsApp</a>
+                </div>
+            </div>
+    </nav>
+
+    <div class="h-16"></div>
+
+    <!-- Principal -->
+    <main>
+
+        <!-- Hero Section -->
+        <section class="relative bg-gradient-to-r from-blue-700 via-blue-800 to-blue-900 text-white">
+            <div class="max-w-7xl mx-auto px-6 lg:px-12 py-20 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+
+                <!-- Textos -->
+                <div class="text-center lg:text-left">
+                    <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-6">
+                        Transforme sua carreira com a <span class="text-green-400">SEA Treinamentos</span>
+                    </h1>
+                    <p class="text-lg text-gray-200 mb-8">
+                        Cursos técnicos, supletivos e certificações reconhecidas para impulsionar seu futuro
+                        profissional.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a href="#cursos"
+                            class="bg-green-400 hover:bg-green-500 text-gray-900 font-semibold px-6 py-3 rounded-lg transition">
+                            Ver Cursos
+                        </a>
+                        <a href="#contato"
+                            class="bg-transparent border border-white hover:bg-white hover:text-blue-900 font-semibold px-6 py-3 rounded-lg transition">
+                            Fale Conosco
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Imagem -->
+                <div class="flex justify-center lg:justify-end">
+                    <img src="assets/logo sea.png" alt="Estudantes felizes aprendendo" class="rounded-xl shadow-lg">
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Cursos -->
+        <section class="container mx-auto mt-10 px-4" id="cursos">
+            <h2 class="text-3xl font-bold text-center mb-8">Nossos Cursos - Prateleira de Oportunidades</h2>
+
+            <!-- Container do carrossel -->
+            <div class="relative">
+
+                <!-- Botão Esquerda -->
+                <button id="prevBtn"
+                    class="absolute left-0 top-1/2 -translate-y-1/2 bg-blue-700 text-white p-3 rounded-md shadow hover:bg-blue-600 z-10">
+                    &#8592;
+                </button>
+
+                <!-- Carrossel -->
+                <div id="carousel"
+                    class="flex space-x-6 overflow-x-auto snap-x snap-mandatory pb-4 scrollbar-hide scroll-smooth">
+
+                    <!-- Técnico em Elétrica -->
+                    <div class="course-item min-w-[250px] flex-shrink-0 snap-center bg-white rounded-lg shadow p-4">
+                        <img src="assets/cursos/Seja técnico em elétrica.jpg" alt="Curso técnico em elétrica"
+                            class="w-full h-32 object-cover rounded mb-4" />
+                        <h3 class="text-lg font-semibold mb-2">Técnico em Elétrica</h3>
+                        <p class="text-sm text-gray-600 mb-4">Formação prática em sistemas elétricos.</p>
+                        <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 w-full"
+                            onclick="toggleInfo('eletrica')">Mais Infos</button>
+                    </div>
+
+                    <!-- Segurança do Trabalho -->
+                    <div class="course-item min-w-[250px] flex-shrink-0 snap-center bg-white rounded-lg shadow p-4">
+                        <img src="assets/cursos/segurança do trabalho.jpg" alt="Curso de segurança do trabalho"
+                            class="w-full h-32 object-cover rounded mb-4" />
+                        <h3 class="text-lg font-semibold mb-2">Segurança do Trabalho</h3>
+                        <p class="text-sm text-gray-600 mb-4">Capacitação para prevenção de riscos.</p>
+                        <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 w-full"
+                            onclick="toggleInfo('seguranca')">Mais Infos</button>
+                    </div>
+
+                    <!-- Recursos Humanos -->
+                    <div class="course-item min-w-[250px] flex-shrink-0 snap-center bg-white rounded-lg shadow p-4">
+                        <img src="assets/cursos/rh.jpg" alt="Recursos Humanos"
+                            class="w-full h-32 object-cover rounded mb-4" />
+                        <h3 class="text-lg font-semibold mb-2">Recursos Humanos</h3>
+                        <p class="text-sm text-gray-600 mb-4">Gestão de pessoas e processos organizacionais.</p>
+                        <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 w-full"
+                            onclick="toggleInfo('rh')">Mais Infos</button>
+                    </div>
+
+                    <!-- Técnico em Mecânica -->
+                    <div class="course-item min-w-[250px] flex-shrink-0 snap-center bg-white rounded-lg shadow p-4">
+                        <img src="assets/cursos/mecanica.jpg" alt="Curso técnico em mecânica"
+                            class="w-full h-32 object-cover rounded mb-4" />
+                        <h3 class="text-lg font-semibold mb-2">Técnico em Mecânica</h3>
+                        <p class="text-sm text-gray-600 mb-4">Manutenção e operação de sistemas mecânicos.</p>
+                        <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 w-full"
+                            onclick="toggleInfo('mecanica')">Mais Infos</button>
+                    </div>
+
+                    <!-- Auxiliar Administrativo -->
+                    <div class="course-item min-w-[250px] flex-shrink-0 snap-center bg-white rounded-lg shadow p-4">
+                        <img src="assets/cursos/aux adm.jpg" alt="Auxiliar administrativo"
+                            class="w-full h-32 object-cover rounded mb-4" />
+                        <h3 class="text-lg font-semibold mb-2">Aux. Administrativo</h3>
+                        <p class="text-sm text-gray-600 mb-4">Apoio em rotinas administrativas.</p>
+                        <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 w-full"
+                            onclick="toggleInfo('adm')">Mais Infos</button>
+                    </div>
+
+                    <!-- Auxiliar em Enfermagem -->
+                    <div class="course-item min-w-[250px] flex-shrink-0 snap-center bg-white rounded-lg shadow p-4">
+                        <img src="https://placehold.co/600x400/EEE/31343C" alt="Auxiliar em enfermagem"
+                            class="w-full h-32 object-cover rounded mb-4" />
+                        <h3 class="text-lg font-semibold mb-2">Aux. em Enfermagem</h3>
+                        <p class="text-sm text-gray-600 mb-4">Atuação no suporte aos profissionais da saúde.</p>
+                        <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 w-full"
+                            onclick="toggleInfo('enfermagem')">Mais Infos</button>
+                    </div>
+
+                    <!-- Eletricista Industrial -->
+                    <div class="course-item min-w-[250px] flex-shrink-0 snap-center bg-white rounded-lg shadow p-4">
+                        <img src="https://placehold.co/600x400/EEE/31343C" alt="Eletricista industrial"
+                            class="w-full h-32 object-cover rounded mb-4" />
+                        <h3 class="text-lg font-semibold mb-2">Eletricista Industrial</h3>
+                        <p class="text-sm text-gray-600 mb-4">Instalação e manutenção elétrica em indústrias.</p>
+                        <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 w-full"
+                            onclick="toggleInfo('eletricista')">Mais Infos</button>
+                    </div>
+
+                    <!-- Técnico por Equivalência -->
+                    <div class="course-item min-w-[250px] flex-shrink-0 snap-center bg-white rounded-lg shadow p-4">
+                        <img src="https://placehold.co/600x400/EEE/31343C" alt="Técnico por equivalência"
+                            class="w-full h-32 object-cover rounded mb-4" />
+                        <h3 class="text-lg font-semibold mb-2">Técnico por Equivalência</h3>
+                        <p class="text-sm text-gray-600 mb-4">Valide sua experiência e obtenha o diploma técnico.</p>
+                        <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 w-full"
+                            onclick="toggleInfo('equivalencia')">Mais Infos</button>
+                    </div>
+
+                    <!-- EJA Supletivo -->
+                    <div class="course-item min-w-[250px] flex-shrink-0 snap-center bg-white rounded-lg shadow p-4">
+                        <img src="https://placehold.co/600x400/EEE/31343C" alt="EJA supletivo"
+                            class="w-full h-32 object-cover rounded mb-4" />
+                        <h3 class="text-lg font-semibold mb-2">EJA Supletivo</h3>
+                        <p class="text-sm text-gray-600 mb-4">Conclua seus estudos de forma flexível.</p>
+                        <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 w-full"
+                            onclick="toggleInfo('eja')">Mais Infos</button>
+                    </div>
+
+                    <!-- Normas Regulamentadoras -->
+                    <div class="course-item min-w-[250px] flex-shrink-0 snap-center bg-white rounded-lg shadow p-4">
+                        <img src="https://placehold.co/600x400/EEE/31343C" alt="Cursos de normas regulamentadoras"
+                            class="w-full h-32 object-cover rounded mb-4" />
+                        <h3 class="text-lg font-semibold mb-2">Normas Regulamentadoras</h3>
+                        <p class="text-sm text-gray-600 mb-4">NRs 10, 11, 18, 20, 33, 34, 35, 37.</p>
+                        <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 w-full"
+                            onclick="toggleInfo('nr')">Mais Infos</button>
+                    </div>
+                </div>
+
+                <!-- Botão Direita -->
+                <button id="nextBtn"
+                    class="absolute right-0 top-1/2 -translate-y-1/2 bg-blue-700 text-white p-3 rounded-md shadow hover:bg-blue-600 z-10">
+                    &#8594;
+                </button>
+            </div>
+
+            <!-- Modal -->
+            <div id="modal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+                <div class="bg-white rounded-lg shadow-lg p-6 w-96 relative">
+                    <button onclick="closeModal()"
+                        class="absolute top-2 right-2 text-gray-500 hover:text-gray-800">✖</button>
+                    <h2 id="modal-title" class="text-xl font-bold mb-4"></h2>
+                    <p id="modal-content" class="text-gray-700"></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Momentos -->
+        <section class="container mx-auto px-4 my-16">
+            <h2 class="text-3xl font-bold text-center mb-8 text-blue-900">Momentos dos Nossos Treinamentos</h2>
+
+            <div class="relative">
+
+                <!-- Botões -->
+                <button id="prevBtnGaleria"
+                    class="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-blue-700 p-2 rounded-md shadow hover:bg-blue-600 transition text-white text-2xl">
+                    &#8592;
+                </button>
+
+                <button id="nextBtnGaleria"
+                    class="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-blue-700 p-2 rounded-md shadow hover:bg-blue-600 transition text-white text-2xl">
+                    &#8594;
+                </button>
+
+                <!-- Container do carrossel -->
+                <div id="carrossel" class="flex gap-6 overflow-x-auto scroll-smooth scrollbar-hide px-4">
+                    
+                    <!-- Foto Exemplo -->
+                    <div class="min-w-[300px] flex-shrink-0">
+                        <img src="https://placehold.co/600x400/EEE/31343C" alt="Curso Técnico em Elétrica"
+                            class="w-full h-64 object-cover rounded">
+                        <p class="mt-2 text-center text-gray-700">Aula prática de Técnico em Elétrica.</p>
+                    </div>
+
+                    <div class="min-w-[300px] flex-shrink-0">
+                        <img src="https://placehold.co/600x400/EEE/31343C" alt="Curso de Segurança do Trabalho"
+                            class="w-full h-64 object-cover rounded">
+                        <p class="mt-2 text-center text-gray-700">Treinamento de Segurança do Trabalho.</p>
+                    </div>
+
+                    <div class="min-w-[300px] flex-shrink-0">
+                        <img src="https://placehold.co/600x400/EEE/31343C" alt="Curso de Recursos Humanos"
+                            class="w-full h-64 object-cover rounded">
+                        <p class="mt-2 text-center text-gray-700">Laboratório de Recursos Humanos.</p>
+                    </div>
+
+                    <div class="min-w-[300px] flex-shrink-0">
+                        <img src="https://placehold.co/600x400/EEE/31343C" alt="Curso Técnico em Mecânica"
+                            class="w-full h-64 object-cover rounded">
+                        <p class="mt-2 text-center text-gray-700">Oficina prática de Mecânica.</p>
+                    </div>
+
+                    <div class="min-w-[300px] flex-shrink-0">
+                        <img src="https://placehold.co/600x400/EEE/31343C" alt="Auxiliar Administrativo"
+                            class="w-full h-64 object-cover rounded">
+                        <p class="mt-2 text-center text-gray-700">Aulas de rotinas administrativas.</p>
+                    </div>
+
+                    <div class="min-w-[300px] flex-shrink-0">
+                        <img src="https://placehold.co/600x400/EEE/31343C" alt="Auxiliar em Enfermagem"
+                            class="w-full h-64 object-cover rounded">
+                        <p class="mt-2 text-center text-gray-700">Prática de Auxiliar em Enfermagem.</p>
+                    </div>
+
+                    <div class="min-w-[300px] flex-shrink-0">
+                        <img src="https://placehold.co/600x400/EEE/31343C" alt="Eletricista Industrial"
+                            class="w-full h-64 object-cover rounded">
+                        <p class="mt-2 text-center text-gray-700">Treinamento de Eletricista Industrial.</p>
+                    </div>
+
+                    <div class="min-w-[300px] flex-shrink-0">
+                        <img src="https://placehold.co/600x400/EEE/31343C" alt="EJA Supletivo"
+                            class="w-full h-64 object-cover rounded">
+                        <p class="mt-2 text-center text-gray-700">Aulas flexíveis do EJA Supletivo.</p>
+                    </div>
+
+                    <div class="min-w-[300px] flex-shrink-0">
+                        <img src="https://placehold.co/600x400/EEE/31343C" alt="Normas Regulamentadoras"
+                            class="w-full h-64 object-cover rounded">
+                        <p class="mt-2 text-center text-gray-700">Treinamento em Normas Regulamentadoras (NRs).</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery -->
+        <section class="container mx-auto px-4 my-10">
+            <h2 class="text-3xl font-bold text-center mb-8">Galeria</h2>
+            <div class="gallery grid grid-cols-1 md:grid-cols-3 gap-6">
+                <img src="https://placehold.co/600x400/EEE/31343C" alt="" />
+                <img src="https://placehold.co/600x400/EEE/31343C" alt="" />
+                <img src="https://placehold.co/600x400/EEE/31343C" alt="" />
+                <img src="https://placehold.co/600x400/EEE/31343C" alt="" />
+                <img src="https://placehold.co/600x400/EEE/31343C" alt="" />
+                <img src="https://placehold.co/600x400/EEE/31343C" alt="" />
+            </div>
+        </section>
+
+        <!-- More Info Tabs -->
+        <section class="container mx-auto px-4 my-10">
+            <h2 class="text-3xl font-bold text-center mb-8">Mais Informações</h2>
+
+            <!-- Botões de Tabs -->
+            <div class="max-w-4xl mx-auto flex border-b border-gray-300 rounded-lg overflow-hidden shadow">
+                <button class="tab-btn flex-1 px-4 py-2 bg-gray-200 font-semibold transition" data-tab="sobre">Sobre
+                    Nós</button>
+                <button class="tab-btn flex-1 px-4 py-2 bg-gray-200 font-semibold transition"
+                    data-tab="depoimentos">Depoimentos</button>
+                <button class="tab-btn flex-1 px-4 py-2 bg-gray-200 font-semibold transition"
+                    data-tab="contato">Contato</button>
+            </div>
+
+            <!-- Conteúdo das Tabs -->
+            <div class="tab-content max-w-5xl mx-auto mt-8">
+
+                <!-- Sobre -->
+                <div id="sobre" class="hidden py-16 bg-slate-50">
+                    <div class="max-w-5xl mx-auto px-6 lg:px-8 flex flex-col lg:flex-row items-center gap-10">
+
+                        <!-- Texto -->
+                        <div class="lg:w-1/2">
+                            <h2 class="text-3xl font-bold text-slate-900 mb-4">Sobre a SEA Treinamentos</h2>
+                            <p class="text-slate-700 leading-relaxed mb-4">
+                                A <span class="font-semibold text-blue-600">SEA Treinamentos</span> é uma empresa
+                                especializada
+                                em cursos profissionais e capacitações, com foco em preparar alunos para os desafios do
+                                mercado
+                                de trabalho.
+                            </p>
+                            <p class="text-slate-700 leading-relaxed mb-4">
+                                Nossos programas unem teoria e prática, sempre com instrutores experientes e materiais
+                                atualizados. Oferecemos treinamentos em áreas estratégicas como
+                                <span class="font-medium">tecnologia, desenvolvimento, gestão e inovação</span>.
+                            </p>
+                            <p class="text-slate-700 leading-relaxed">
+                                Nosso compromisso é entregar qualidade, acessibilidade e conhecimento aplicável,
+                                ajudando
+                                você a
+                                se destacar e conquistar novas oportunidades na carreira.
+                            </p>
+                        </div>
+
+                        <!-- Imagem -->
+                        <div class="lg:w-1/2">
+                            <img src="assets/logo sea.png" alt="SEA Treinamentos"
+                                class="w-full rounded-lg shadow-lg border border-slate-200" />
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <!-- Depoimentos -->
+                <div id="depoimentos" class="hidden py-16 bg-white">
+                    <div class="max-w-5xl mx-auto px-6 lg:px-8">
+                        <h2 class="text-3xl font-bold text-slate-900 text-center mb-10">O que dizem nossos alunos</h2>
+
+                        <div class="grid gap-8 md:grid-cols-2">
+                            <!-- Card 1 -->
+                            <div
+                                class="bg-slate-50 border border-slate-200 p-6 rounded-xl shadow hover:shadow-md transition">
+                                <p class="text-slate-700 italic mb-4">"Os cursos do SEA mudaram minha carreira!
+                                    Recomendo a
+                                    todos."</p>
+                                <div class="flex items-center gap-3">
+                                    <img src="mulher.jpg" alt="Foto Maria Oliveira"
+                                        class="w-15 h-12 rounded-full border border-slate-300">
+                                    <div>
+                                        <p class="font-semibold text-slate-900">Maria Oliveira</p>
+                                        <p class="text-sm text-slate-500">Ex-aluna de Desenvolvimento</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Card 2 -->
+                            <div
+                                class="bg-slate-50 border border-slate-200 p-6 rounded-xl shadow hover:shadow-md transition">
+                                <p class="text-slate-700 italic mb-4">"Excelente conteúdo e suporte. Aprendi muito e me
+                                    senti
+                                    preparado para o mercado."</p>
+                                <div class="flex items-center gap-3">
+                                    <img src="assets/pessoas/homem.jpg" alt="Foto Gustavo Silva"
+                                        class="w-15 h-12 rounded-full border border-slate-300">
+                                    <div>
+                                        <p class="font-semibold text-slate-900">Gustavo Silva</p>
+                                        <p class="text-sm text-slate-500">Aluno de Gestão de Projetos</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Contato -->
+                <div id="contato" class="hidden py-16 bg-slate-50">
+                    <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+                        <h2 class="text-3xl font-bold text-slate-900 mb-6">Entre em Contato</h2>
+                        <p class="text-slate-700 mb-8">Entre em contato para inscrições, dúvidas ou mais informações
+                            sobre
+                            nossos
+                            cursos.</p>
+
+                        <div class="flex flex-col md:flex-row justify-center gap-6">
+                            <!-- WhatsApp -->
+                            <a target="_blank" href="https://wa.me/5522992178202?text=Olá!"
+                                class="inline-flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white font-semibold px-6 py-3 rounded-lg transition">
+                                <!-- Ícone WhatsApp -->
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path
+                                        d="M12.04 2C6.48 2 2 6.48 2 12c0 2.12.56 4.1 1.53 5.8L2 22l4.37-1.42C7.94 21.44 9.95 22 12 22c5.52 0 10-4.48 10-10s-4.48-10-9.96-10zM12 20c-1.86 0-3.6-.57-5.03-1.53l-.36-.22-2.59.85.87-2.53-.24-.38C3.57 15.59 3 13.85 3 12c0-4.97 4.03-9 9-9s9 4.03 9 9-4.03 9-9 9z" />
+                                    <path
+                                        d="M17.5 14.5c-.25-.12-1.48-.73-1.71-.82-.23-.09-.4-.12-.57.12-.17.25-.66.82-.8.99-.14.17-.28.19-.52.07-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.46-1.38-1.71-.14-.25-.01-.38.11-.5.11-.12.25-.28.37-.42.12-.14.16-.25.25-.42.09-.17.05-.31-.03-.43-.08-.12-.57-1.37-.78-1.88-.21-.5-.43-.43-.57-.44-.14-.01-.3-.01-.46-.01s-.42.06-.64.31c-.22.25-.85.83-.85 2.03s.87 2.36.99 2.52c.12.17 1.71 2.61 4.14 3.66.58.25 1.03.4 1.38.51.58.18 1.11.15 1.53.09.47-.07 1.48-.6 1.69-1.18.21-.57.21-1.06.15-1.17-.07-.11-.25-.18-.51-.3z" />
+                                </svg>
+                                WhatsApp
+                            </a>
+
+                            <!-- Instagram -->
+                            <a target="_blank" href="https://instagram.com/seatreinamentos"
+                                class="inline-flex items-center gap-2 bg-pink-500 hover:bg-pink-600 text-white font-semibold px-6 py-3 rounded-lg transition">
+                                <!-- Ícone Instagram -->
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 2.2c3.2 0 3.584.012 4.85.07 1.17.054 1.96.24 2.42.403.6.21 1.03.46 1.48.904.45.45.693.88.904 1.48.163.46.35 1.25.404 2.42.057 1.266.07 1.65.07 4.85s-.013 3.584-.07 4.85c-.054 1.17-.24 1.96-.404 2.42-.21.6-.46 1.03-.904 1.48-.45.45-.88.693-1.48.904-.46.163-1.25.35-2.42.404-1.266.057-1.65.07-4.85.07s-3.584-.013-4.85-.07c-1.17-.054-1.96-.24-2.42-.404-.6-.21-1.03-.46-1.48-.904-.45-.45-.693-.88-.904-1.48-.163-.46-.35-1.25-.404-2.42-.057-1.266-.07-1.65-.07-4.85s.013-3.584.07-4.85c.054-1.17.24-1.96.404-2.42.21-.6.46-1.03.904-1.48.45-.45.88-.693 1.48-.904.46-.163 1.25-.35 2.42-.404 1.266-.057 1.65-.07 4.85-.07m0-2.2C8.74 0 8.332.013 7.053.07 5.78.127 4.788.36 4.042.69c-.756.33-1.397.77-2.037 1.41-.64.64-1.08 1.28-1.41 2.037-.33.746-.563 1.738-.62 3.01C.013 8.332 0 8.74 0 12s.013 3.668.07 4.947c.057 1.272.29 2.264.62 3.01.33.756.77 1.397 1.41 2.037.64.64 1.28 1.08 2.037 1.41.746.33 1.738.563 3.01.62C8.332 23.987 8.74 24 12 24s3.668-.013 4.947-.07c1.272-.057 2.264-.29 3.01-.62.756-.33 1.397-.77 2.037-1.41.64-.64 1.08-1.28 1.41-2.037.33-.746.563-1.738.62-3.01.057-1.279.07-1.687.07-4.947s-.013-3.668-.07-4.947c-.057-1.272-.29-2.264-.62-3.01-.33-.756-.77-1.397-1.41-2.037-.64-.64-1.28-1.08-2.037-1.41-.746-.33-1.738-.563-3.01-.62C15.668.013 15.26 0 12 0z" />
+                                    <path
+                                        d="M12 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a3.999 3.999 0 1 1 0-7.998 3.999 3.999 0 0 1 0 7.998z" />
+                                    <circle cx="18.406" cy="5.594" r="1.44" />
+                                </svg>
+                                Instagram
+                            </a>
+
+                            <!-- Email -->
+                            <a href="mailto:oficialseatreinamentos@gmail.com"
+                                class="inline-flex items-center gap-2 bg-red-500 hover:bg-red-600 text-white font-semibold px-6 py-3 rounded-lg transition">
+                                <!-- Ícone Email -->
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path
+                                        d="M2 4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h20a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H2zm0 2h20v.511l-10 6.25-10-6.25V6zm0 2.239 8.803 5.502a2 2 0 0 0 2.394 0L22 8.239V18H2V8.239z" />
+                                </svg>
+                                Email
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 pt-10">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
+
+            <!-- Sobre -->
+            <div>
+                <h4 class="text-lg font-semibold text-white mb-4">Sobre Nós</h4>
+                <p class="text-sm">
+                    A <span class="font-semibold">SEA Treinamentos</span> oferece cursos técnicos,
+                    profissionalizantes e supletivos, com foco em preparar profissionais
+                    para o mercado de trabalho.
+                </p>
+            </div>
+
+            <!-- Contato -->
+            <div>
+                <h4 class="text-lg font-semibold text-white mb-4">Contato</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="mailto:oficialseatreinamentos@gmail.com" class="font-medium">Email:
+                            oficialseatreinamentos@gmail.com </a></li>
+                    <li>
+                        <span class="font-medium">Telefone: +55 (22)
+                            99217-8202
+                        </span>
+                    </li>
+
+                    <li>
+                        <a href="https://wa.me/5522992178202?text=Olá!" class="font-medium">WhatsApp: +55 (22)
+                            99217-8202
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Localização -->
+            <div>
+                <h4 class="text-lg font-semibold text-white mb-4">Localização</h4>
+                <p class="text-sm">Rua tancredo de Almeida Neves, 136 - Parque aeroporto<br>Macaé - RJ, Brasil</p>
+                <a href="https://www.google.com/maps" target="_blank"
+                    class="inline-block mt-3 text-blue-400 hover:text-blue-300 text-sm">
+                    Ver no Google Maps →
+                </a>
+            </div>
+
+            <!-- Links Úteis -->
+            <div class="items-center flex">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Reclame-aqui-logo.png" classw-20="">
+            </div>
+        </div>
+
+        <!-- Divider -->
+        <div class="border-t border-gray-700 mt-8 pt-6 text-center text-sm text-gray-500">
+            <p>© 2024 SEA Treinamentos. Todos os direitos reservados.</p>
+            <p class="mt-2 flex items-center justify-center gap-2">
+                <img src="https://cdn-icons-png.flaticon.com/512/6472/6472048.png" class="w-20" alt=""> Site protegido
+                com certificado SSL
+            </p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
