@@ -25,46 +25,120 @@ document.addEventListener('DOMContentLoaded', () => {
         activeTab = tabId;
     }
 
-
-
+    // Mostra a primeira aba por padrão
     showTab('sobre');
 
+    // Clique nos botões de tabs
     tabs.forEach(btn => {
         btn.addEventListener('click', () => showTab(btn.dataset.tab));
     });
 
+    // Clique nos links do menu
     const navLinks = document.querySelectorAll('a[href^="#"]');
-
     navLinks.forEach(link => {
         link.addEventListener('click', e => {
             const targetId = link.getAttribute('href').substring(1);
             const tabElement = document.getElementById(targetId);
-            tabElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            window.scrollBy(0, -80);
 
             if (tabElement) {
                 e.preventDefault();
                 showTab(targetId);
-                tabElement.scrollIntoView({ behavior: 'smooth' });
+                // Scroll ajustado com offset
+                const offset = 80;
+                const top = tabElement.getBoundingClientRect().top + window.scrollY - offset;
+                window.scrollTo({ top, behavior: 'smooth' });
+            }
+        });
+    });
+
+    // Menu mobile
+    const btnMobile = document.getElementById('navToggle');
+    const menu = document.getElementById('mobileMenu');
+    const iconOpen = document.getElementById('iconOpen');
+    const iconClose = document.getElementById('iconClose');
+
+    if (btnMobile && menu && iconOpen && iconClose) {
+        btnMobile.addEventListener('click', () => {
+            const open = !menu.classList.contains('hidden');
+            menu.classList.toggle('hidden');
+            btnMobile.setAttribute('aria-expanded', open ? 'false' : 'true');
+            iconOpen.classList.toggle('hidden', !open);
+            iconClose.classList.toggle('hidden', open);
+        });
+    }
+
+    // Modal dos cursos
+    window.toggleInfo = function (courseKey) {
+        const modal = document.getElementById('modal');
+        const title = document.getElementById('modal-title');
+        const content = document.getElementById('modal-content');
+
+        if (modal && title && content && courseInfos[courseKey]) {
+            title.textContent = courseInfos[courseKey].title;
+            content.textContent = courseInfos[courseKey].content;
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+    };
+
+    window.closeModal = function () {
+        const modal = document.getElementById('modal');
+        if (modal) {
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+    };
+
+    // Carrossel cursos
+    const carousel = document.getElementById('carousel');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+
+    if (carousel && prevBtn && nextBtn) {
+        prevBtn.addEventListener('click', () => {
+            carousel.scrollBy({ left: -300, behavior: 'smooth' });
+        });
+
+        nextBtn.addEventListener('click', () => {
+            carousel.scrollBy({ left: 300, behavior: 'smooth' });
+        });
+    }
+
+    // Carrossel galeria
+    const carrossel = document.getElementById('carrossel');
+    const prevBtnGaleria = document.getElementById('prevBtnGaleria');
+    const nextBtnGaleria = document.getElementById('nextBtnGaleria');
+    const scrollAmount = 320;
+
+    if (carrossel && prevBtnGaleria && nextBtnGaleria) {
+        prevBtnGaleria.addEventListener('click', () => {
+            carrossel.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+        });
+
+        nextBtnGaleria.addEventListener('click', () => {
+            carrossel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        });
+    }
+
+    // FAQ
+    document.querySelectorAll('.faq-btn').forEach(button => {
+        button.addEventListener('click', () => {
+            const content = button.nextElementSibling;
+            const icon = button.querySelector('span');
+
+            if (content.classList.contains('hidden')) {
+                document.querySelectorAll('.faq-content').forEach(c => c.classList.add('hidden'));
+                document.querySelectorAll('.faq-btn span').forEach(i => i.classList.remove('rotate-180'));
+
+                content.classList.remove('hidden');
+                icon.classList.add('rotate-180');
+            } else {
+                content.classList.add('hidden');
+                icon.classList.remove('rotate-180');
             }
         });
     });
 });
-
-// Menu mobile
-const btnMobile = document.getElementById('navToggle');
-const menu = document.getElementById('mobileMenu');
-const iconOpen = document.getElementById('iconOpen');
-const iconClose = document.getElementById('iconClose');
-
-if (btnMobile) {
-    btnMobile.addEventListener('click', () => {
-        const open = menu.classList.toggle('hidden') === false;
-        btnMobile.setAttribute('aria-expanded', open ? 'true' : 'false');
-        iconOpen.classList.toggle('hidden', open);
-        iconClose.classList.toggle('hidden', !open);
-    });
-}
 
 const courseInfos = {
     eletrica: {
@@ -108,46 +182,3 @@ const courseInfos = {
         content: "Cursos obrigatórios e especializados: NR-10 (eletricidade), NR-11 (transporte), NR-18 (construção), NR-20 (inflamáveis), NR-33 (espaço confinado), NR-34 (indústria naval), NR-35 (trabalho em altura) e NR-37 (plataformas de petróleo)."
     }
 };
-
-function toggleInfo(courseKey) {
-    const modal = document.getElementById('modal');
-    const title = document.getElementById('modal-title');
-    const content = document.getElementById('modal-content');
-
-    title.textContent = courseInfos[courseKey].title;
-    content.textContent = courseInfos[courseKey].content;
-    modal.classList.remove('hidden');
-    modal.classList.add('flex');
-}
-
-function closeModal() {
-    const modal = document.getElementById('modal');
-    modal.classList.add('hidden');
-    modal.classList.remove('flex');
-}
-
-const carousel = document.getElementById('carousel');
-const prevBtn = document.getElementById('prevBtn');
-const nextBtn = document.getElementById('nextBtn');
-
-prevBtn.addEventListener('click', () => {
-    carousel.scrollBy({ left: -300, behavior: 'smooth' });
-});
-
-nextBtn.addEventListener('click', () => {
-    carousel.scrollBy({ left: 300, behavior: 'smooth' });
-});
-
-const carrossel = document.getElementById('carrossel');
-const prevBtnGaleria = document.getElementById('prevBtnGaleria');
-const nextBtnGaleria = document.getElementById('nextBtnGaleria');
-
-const scrollAmount = 320;
-
-prevBtnGaleria.addEventListener('click', () => {
-    carrossel.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-});
-
-nextBtnGaleria.addEventListener('click', () => {
-    carrossel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-});
